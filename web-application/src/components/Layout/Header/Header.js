@@ -3,10 +3,10 @@ import './Header.scss'
 function Header() {
 
     return (
-        <div class="grid-header-container">
-            <div class="header-item">Logo</div>
-            <div class="header-item">Pages</div>
-            <div class="header-item">Picture</div>
+        <div className="grid-header-container">
+            <div className="header-item">Logo</div>
+            <div className="header-item">Pages</div>
+            <div className="header-item">Picture</div>
         </div>
     )
 }

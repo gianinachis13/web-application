@@ -3,10 +3,10 @@ import './RightSide.scss'
 function RightSide() {
 
     return (
-        <div class="grid-right-side-container">
-            <div class="right-side-item">Element1</div>
-            <div class="right-side-item">Element2</div>
-            <div class="right-side-item">Element3</div>
+        <div className="grid-right-side-container">
+            <div className="right-side-item">Element1</div>
+            <div className="right-side-item">Element2</div>
+            <div className="right-side-item">Element3</div>
         </div>
     )
 }
