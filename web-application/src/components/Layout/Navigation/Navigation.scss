@@ -1,0 +1,12 @@
+.grid-navigation-container {
+  display: flex;
+  flex-direction: column;
+  }
+
+  .navigation-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    margin: 10px 0px;
+    text-align: center;
+  }
