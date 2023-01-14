@@ -19,12 +19,13 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #00BAF0;
-  background: white;
+  background-color: white;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: black;
   height: 50px;
   padding: 1em;
+  box-sizing: border-box;
+  border: solid rgb(247 227 196) 9px;
 }
 
 .menu {
@@ -104,7 +105,8 @@ html, body {
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 10px
+    padding: 10px;
+    z-index: 1;
   }
   #menu-toggle ~ .menu li {
     height: 0;
@@ -126,7 +128,7 @@ html, body {
     padding: 0.5em 0;
     width: 100%;
     color: black;
-    background: linear-gradient(to bottom, #f8f8f8, #9ae7e3);
+    background: linear-gradient(to bottom, #f8f8f8, #f6b5b5);
   }
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
