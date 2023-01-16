@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // import Register from './components/Register'
 import Layout from './components/Layout/Layout'
 
+
+
 const App = () => {
   return (
     <Router>

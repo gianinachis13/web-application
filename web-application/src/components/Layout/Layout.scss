@@ -4,8 +4,8 @@
   'header header header header header header'
   'menu main main main main right'
   'footer footer footer footer footer footer';
-  background-color: pink;
-  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  // padding: 10px;
   min-height: 50rem;
   overflow: auto;
 }
@@ -15,7 +15,6 @@
   .item1 { grid-area: header; }
   .item2 { grid-area: menu; }
   .item3 { grid-area: main; }
-
   .item5 { grid-area: footer; }
   
   .grid-container {
@@ -31,10 +30,12 @@
   }
   
   .grid-container > div {
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
     text-align: center;
-    padding: 20px 20px;
     font-size: 30px;
+  }
+  .item2 {
+    padding: 10px;
   }
 }
 
