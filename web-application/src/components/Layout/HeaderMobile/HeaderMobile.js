@@ -1,9 +1,8 @@
 import React from 'react'
 import './HeaderMobile.scss'
 import  logo  from "../../images/GOAT2.jpg"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 function HeaderMobile() {
 
@@ -12,8 +11,14 @@ function HeaderMobile() {
         <div>
         <img src={logo} className="logo" />
         </div>
-        <div>
-        <FontAwesomeIcon icon="fa-sharp fa-solid fa-user" />
+        <div className='header-buttons'>
+          <div className='search'>
+            <SearchOutlinedIcon />
+          </div>
+          <div className='shop'>
+            <ShoppingBagOutlinedIcon />
+          </div>
+
  
         </div>
         <input id="menu-toggle" type="checkbox" />

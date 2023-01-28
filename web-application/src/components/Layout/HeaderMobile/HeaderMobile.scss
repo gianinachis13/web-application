@@ -97,6 +97,19 @@ html, body {
   padding-top: 3px;
 }
 
+.header-buttons{
+  display: flex;
+  position: relative;
+  left: 100px;
+}
+
+.search{
+  padding: 10px 0px;
+}
+.shop{
+  padding: 10px;
+}
+
 @media (max-width: 768px) {
   .menu-button-container {
     display: flex;

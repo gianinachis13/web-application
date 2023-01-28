@@ -12,11 +12,9 @@ function Layout() {
 
     return (
         <div className="grid-container">
-            {/* <div className="item1"><Header /></div> */}
             <div className="item1"><HeaderMobile/></div>
             <div className="item2"><Navigation /></div>
             <div className="item3"><MainContent /></div>
-            {/* <div className="item4"><RightSide /></div> */}
             <div className="item5"><Footer /></div>
         </div>
 
