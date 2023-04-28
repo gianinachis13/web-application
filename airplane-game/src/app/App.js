@@ -38,10 +38,12 @@ export default () => {
     let shot = shots + 1;
     let successHits = hits;
     let newAirplane = [...airplane];
+
+    console.log("Battlefield:", battleField, "X:", x, "Y:", y)
     let cellValue = battleField[x][y];
 
     if (cellValue) {
-      newAirplane[0].hits = newAirplane[0].hits + 1;
+      newAirplane[0].hits = newAirplane[0].hits + 1; //counting starts with 0 -> force 1
       newBattleField[x][y] = 'hitted';
       successHits += 1;
       setBattleField(newBattleField)
