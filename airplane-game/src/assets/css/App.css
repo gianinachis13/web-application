@@ -7,7 +7,7 @@
 }
 
 .battlefieldTable {
-    border: 1px solid #eb1212;
+    border: 3px solid #2acd737b;
 }
 
 .centered {
@@ -29,16 +29,19 @@
     color: white;
 }
 
-.navbar-default .navbar-brand:focus {
+.navbar-default .navbar-brand:hover {
     color: white;
 }
 
 .navbar-default .navbar-nav > li > a {
     color: white;
+    font-size: 16px;
 }
 
-.navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:hover {
     color: white;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .color {
@@ -46,17 +49,22 @@
 }
 
 h1 {
-    color: #ec6361;
+    color: #616aecd2;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-
+.panel{
+    display: flex;
+}
 
 table {
     display: table;
     border-collapse: separate;
     border-spacing: 0;
+    background-color: #00d5ff24;
     table-layout: fixed;
-    border: 1px solid #f4b23e;
+    border: 3px solid #3ebaf481;
     width: 500px;
     height: 500px;
 }
@@ -74,11 +82,19 @@ table {
 .scoresPanel {
     padding-top: 20px;
 }
+button {
+    color: #595959;
+    background-color: #2fd2a2;
+    border: none;
+    height: 98px;
+    width: 200px;
+    font-weight: bold;
+}
 
 td {
     height: 50px;
     width: 50px;
-    border: 1px solid rgba(166, 164, 156, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
     border-spacing: 0 0;
     padding: 0;
 }
@@ -140,7 +156,7 @@ ul {
 }
 
 .scoreShots {
-    background-color: #58b4a0;
+    background-color: #ffd23c98;
     width: 50%;
     float: left;
 }

@@ -11,7 +11,7 @@ export default (props) => {
   }
 
   return (
-    <div>
+    <div className='panel'>
       <div className='scorePanel text-center'>
         <div className='scoreHits'>
           <h2 className='scores'>{hits}</h2>
@@ -28,7 +28,7 @@ export default (props) => {
       </div>
       <div>
         <button onClick={showHistory}>
-          See history
+          HISTORY
         </button>
 
         {previousShots && previousShots.map((nr) => {

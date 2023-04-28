@@ -9,7 +9,7 @@ export default (props) => {
     <Navbar>
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="/">Battleships React Application</a>
+          <a href="/">Airplanes Game</a>
         </Navbar.Brand>
       </Navbar.Header>
 

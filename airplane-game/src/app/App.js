@@ -70,6 +70,7 @@ export default () => {
 
     />
   )
+
   return (
     <div className='main-content'>
       <Nav
