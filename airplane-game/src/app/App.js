@@ -15,11 +15,23 @@ export default () => {
   const [airplane, setAirplane] = useState(null)
   const [shots, setShots] = useState(0)
   const [hits, setHits] = useState(0)
+  const [value, setValue] = useState(10);
 
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
+
+  const setGrid = () => {
+    let newAirplane = _.cloneDeep(shipType);
+    getBattleField(parseInt(value))
+    setHits(0)
+    setShots(0)
+    setAirplane(newAirplane)
+  }
 
   const onClick = () => {
     let newAirplane = _.cloneDeep(shipType);
-    setBattleField(getBattleField())
+    setBattleField(getBattleField(parseInt(value)))
     setHits(0)
     setShots(0)
     setAirplane(newAirplane)
@@ -34,7 +46,7 @@ export default () => {
   }
 
   const onCellClick = (x, y) => {
-    let newBattleField = makeClone(battleField);
+    let newBattleField = makeClone(battleField, );
     let shot = shots + 1;
     let successHits = hits;
     let newAirplane = [...airplane];
@@ -42,6 +54,7 @@ export default () => {
     console.log("Battlefield:", battleField, "X:", x, "Y:", y)
     let cellValue = battleField[x][y];
 
+    console.log("Cel", cellValue)
     if (cellValue) {
       newAirplane[0].hits = newAirplane[0].hits + 1; //counting starts with 0 -> force 1
       newBattleField[x][y] = 'hitted';
@@ -58,6 +71,7 @@ export default () => {
   }
   let statsPanel = (
     <Stats
+      
       airplane={airplane}
       hits={hits}
       shots={shots}
@@ -81,6 +95,21 @@ export default () => {
       <Grid>
         <Row className='show-grid'>{statsPanel}{battleFieldPanel}</Row>
       </Grid>
+      <div>
+      <input
+        type="number"
+        id="message"
+        name="message"
+        onChange={handleChange}
+        value={value}
+      />
+
+      <h2>Grid: {value} x {value}</h2>
+
+      <button onClick={setGrid}>
+          SetGrid
+        </button>
+    </div>
     </div>
   );
 }

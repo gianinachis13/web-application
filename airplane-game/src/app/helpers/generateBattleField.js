@@ -3,16 +3,17 @@ import { shipType } from "../constants/constants";
 /*
 * Method generates battlefield with placed ship
 * */
-export const getBattleField = () => {
-  let battleField = [10];
-  for (let i = 0; i < 10; i++) {
-    battleField[i] = [10];
-    for (let j = 0; j < 10; j++) {
+export const getBattleField = (grid) => {
+  console.log("0",grid)
+  let battleField = [];
+  for (let i = 0; i < grid; i++) {
+    battleField[i] = [];
+    for (let j = 0; j < grid; j++) {
       battleField[i][j] = null;
     }
   }
   for (let i = 0; i < shipType.length; i++) {
-    battleField = generateShipPositions(shipType[i], battleField);
+    battleField = generateShipPositions(shipType[i], battleField, grid);
   }
   return battleField;
 };
@@ -25,11 +26,12 @@ export const getBattleField = () => {
 *
 * @returns updated battlefield
 * */
-const generateShipPositions = (ship, battleField) => {
+const generateShipPositions = (ship, battleField, grid) => {
+  console.log("1",grid)
   let shipStartPosition = null;
   let continueLoop = true;
   while (continueLoop) {
-    shipStartPosition = getRandomCoordinate();
+    shipStartPosition = getRandomCoordinate(grid);
     if (positionIsFree(battleField, shipStartPosition)) {
       let x = shipStartPosition[0];
       let y = shipStartPosition[1];
@@ -38,8 +40,8 @@ const generateShipPositions = (ship, battleField) => {
 
       for (let i = 0; i < directions.length; i++) {
 
-        let tempBattlefield = makeClone(battleField);
-        let newBattleField = tryDirections(directions[i], ship, shipStartPosition, tempBattlefield);
+        let tempBattlefield = makeClone(battleField, grid);
+        let newBattleField = tryDirections(directions[i], ship, shipStartPosition, tempBattlefield, grid);
         if (newBattleField !== null) {
           continueLoop = false;
           battleField = [...newBattleField];
@@ -62,7 +64,7 @@ const generateShipPositions = (ship, battleField) => {
 *
 *    @returns new battlefield or null
 * */
-function tryDirections(direction, ship, shipStartPosition, battleField) {
+function tryDirections(direction, ship, shipStartPosition, battleField, grid) {
   let x = shipStartPosition[0];
   let y = shipStartPosition[1];
   let wrongDirection = false;
@@ -70,7 +72,8 @@ function tryDirections(direction, ship, shipStartPosition, battleField) {
   for (let i = 1; i < ship.size; i++) {
     switch (direction) {
       case 0:
-        if (y + i > 9) {
+
+        if (y + i > grid-1) {
           wrongDirection = true;
           break;
         } else if (positionIsFree(battleField, [x, y + i]) || battleField[x][y + i] === ship.id) {
@@ -82,7 +85,7 @@ function tryDirections(direction, ship, shipStartPosition, battleField) {
           break;
         }
       case 1:
-        if (x + i > 9) {
+        if (x + i > grid-1) {
           wrongDirection = true;
           break;
         } else if (positionIsFree(battleField, [x + i, y]) || battleField[x + i][y] === ship.id) {
@@ -142,6 +145,7 @@ function tryDirections(direction, ship, shipStartPosition, battleField) {
 const positionIsFree = (battleField, position) => {
   let x = position[0];
   let y = position[1];
+  console.log(x, y)
   return !(battleField[x][y] > 0);
 };
 
@@ -162,8 +166,10 @@ const getDirections = () => {
 /*
 * Returns random coordinate
 * */
-const getRandomCoordinate = () => {
-  const max = 9;
+const getRandomCoordinate = (grid) => {
+  const max = grid-1;
+
+  console.log("grid",grid)
   return [Math.floor(Math.random() * max), Math.floor(Math.random() * max)]
 };
 
@@ -181,13 +187,17 @@ const getRandomNumber = (max) => {
 *
 *  @returns clone of initial battleField
 * */
-export const makeClone = (battleField) => {
-  let clone = [10];
-  for (let i = 0; i < 10; i++) {
-    clone[i] = [10];
-    for (let j = 0; j < 10; j++) {
+export const makeClone = (battleField, grid) => {
+  let clone = [];
+
+  for (let i = 0; i < battleField.length; i++) {
+
+    clone[i] = [];
+    for (let j = 0; j < battleField[i].length; j++) {
       clone[i][j] = battleField[i][j];
     }
+
+
   }
   return clone;
 };

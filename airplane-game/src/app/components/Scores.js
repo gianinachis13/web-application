@@ -4,6 +4,7 @@ export default (props) => {
   const { hits, shots } = props;
   const [previousShots, setPreviousShots] = useState([])
 
+
   const showHistory = () => {
     setPreviousShots(currentShot => {
       return [...currentShot, shots]
@@ -43,6 +44,9 @@ export default (props) => {
             </div>
           )
         })}
+      </div>
+
+      <div>
       </div>
 
     </div>
