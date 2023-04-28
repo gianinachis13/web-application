@@ -1,4 +1,4 @@
-import aircraftIcon from './../../assets/img/Aircraft Shape.png';
+import aircraftIcon from './../../assets/img/plane.png';
 
 export const shipType = [
   {
