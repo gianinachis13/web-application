@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import _ from 'lodash'
-import React, { Component, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid, Row } from 'react-bootstrap';
 import '../assets/css/App.css';
 import BattleField from './components/BattleField.js';
@@ -9,7 +9,6 @@ import Nav from "./components/Nav";
 import Stats from "./components/Stats";
 import { shipType } from './constants/constants';
 import { getBattleField, makeClone } from './helpers/generateBattleField';
-import { getMaxHits } from './helpers/getMaxHits';
 
 export default () => {
   const [battleField, setBattleField] = useState(null)

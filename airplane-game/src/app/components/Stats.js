@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Airplane from './Airplane';
 import Scores from "./../components/Scores";

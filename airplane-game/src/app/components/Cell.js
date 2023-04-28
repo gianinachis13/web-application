@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import hit from './../../assets/img/Hit.png';
 import miss from './../../assets/img/Miss.png';
 

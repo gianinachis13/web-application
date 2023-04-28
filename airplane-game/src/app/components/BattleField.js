@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Col } from 'react-bootstrap';
 import Cell from "./Cell";
 import StartButton from "./StartButton";

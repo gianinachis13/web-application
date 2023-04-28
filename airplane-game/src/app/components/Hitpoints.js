@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import hitSmall from './../../assets/img/Hit small.png'
 import missSmall from './../../assets/img/Miss small.png'
 

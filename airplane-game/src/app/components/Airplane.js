@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Hitpoints from "./Hitpoints";
 
 export default (props) =>  {
   let { airplane } = props;
 
     return (
-      <ul className='flotillaContainer'>
+      <ul className='airplaneContainer'>
         { airplane &&
-          airplane.map((ship, index) => {
+          airplane.map((airplane, index) => {
             return (
-              <li key={index} className='shipItem'>
-                <img src={ship.icon} className="shipIcon" alt="shipIcon"/>
-                <Hitpoints hitPoints={ship.hitPoints - ship.hits} hits={ship.hits}/>
+              <li key={index} className='airplaneItem'>
+                <img src={airplane.icon} className="airplaneIcon" alt="airplaneIcon"/>
+                <Hitpoints hitPoints={airplane.hitPoints - airplane.hits} hits={airplane.hits}/>
               </li>
             )
           })

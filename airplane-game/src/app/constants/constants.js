@@ -1,4 +1,4 @@
-import aircraftIcon from './../../assets/img/plane.png';
+import plane from './../../assets/img/plane.png';
 
 export const shipType = [
   {
@@ -7,7 +7,7 @@ export const shipType = [
     size: 5,
     count: 1,
     position: {},
-    icon: aircraftIcon,
+    icon: plane,
     hitPoints: 5,
     hits: 0
   },
