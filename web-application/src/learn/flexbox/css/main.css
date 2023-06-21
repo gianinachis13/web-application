@@ -1,0 +1,16 @@
+/* Your code goes here */
+.container {
+    display: flex;
+    width: 400px;
+border: 1px solid white;
+flex-direction: row;
+}
+
+.container div {
+   width: 200px;
+   flex-shrink: 1;
+margin: 0;
+}
+
+
+
